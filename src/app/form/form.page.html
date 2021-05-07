@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="retour"></ion-back-button>
+    </ion-buttons>
+    <ion-title>form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label position="stacked">Groupe ou artiste</ion-label>
+      <ion-input [(ngModel)]="concert.bandName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Nom de la salle</ion-label>
+      <ion-input [(ngModel)]="concert.location.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Ville</ion-label>
+      <ion-input [(ngModel)]="concert.location.city"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Date du concert</ion-label>
+      <ion-datetime [(ngModel)]="concert.concertDate"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Note</ion-label>
+      <ion-range min="0" max="5" [(ngModel)]="concert.rating"></ion-range>
+      <ion-chip slot="end">{{ concert.rating }}</ion-chip>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Genre</ion-label>
+      <ion-input [(ngModel)]="concert.genre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Commentaire</ion-label>
+      <ion-textarea [(ngModel)]="concert.comment"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
