@@ -60,5 +60,33 @@ export class ConcertService {
     this.concertList.push(concert);
   }
 
+  public delete(id: number){
+    // Trouver l'index qui correspond à l'id
+    const index = this.concertList.findIndex(
+      (item)=> {
+        return item.id == id;
+      }
+    );
+    // Suppression dans le tableau
+    this.concertList.splice(index, 1);
+  }
 
+
+  getOneById(id): ConcertInterface {
+    const index = this.concertList.findIndex(
+      (item)=> {
+        return item.id == id;
+      }
+    );
+
+    return this.concertList[index];
+  }
+
+  getFilteredListByGenre(search){
+    return this.concertList.filter(
+      (item) => {
+        return item.genre.indexOf(search) >= 0;
+      }
+    );
+  }
 }

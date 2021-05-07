@@ -28,7 +28,7 @@
 
     <ion-item>
       <ion-label position="stacked">Date du concert</ion-label>
-      <ion-datetime [(ngModel)]="concert.concertDate"></ion-datetime>
+      <ion-datetime [(ngModel)]="concert.concertDate" max="2030-01-01"></ion-datetime>
     </ion-item>
 
     <ion-item>
@@ -50,3 +50,11 @@
   </ion-list>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar class="ion-padding">
+    <ion-button expand="block" (click)="validateForm()">
+      Envoyer
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
